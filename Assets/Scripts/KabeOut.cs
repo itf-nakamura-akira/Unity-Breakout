@@ -2,10 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Destroyer : MonoBehaviour
+public class KabeOut : MonoBehaviour
 {
-
-    public GameObject masterObj;
 
     // Use this for initialization
     void Start()
@@ -21,7 +19,6 @@ public class Destroyer : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        masterObj.GetComponent<GameMaster>().boxNum--;
-        Destroy(gameObject);
+        GameObject.Find("Master").GetComponent<GameMaster>().GameOver();
     }
 }
